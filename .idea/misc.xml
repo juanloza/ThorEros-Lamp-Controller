@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Juan/.gradle/caches/transforms-3/914116008979e77bc79da871871e9f31/transformed/appcompat-1.4.1/res/layout/support_simple_spinner_dropdown_item.xml" value="0.33106884057971014" />
+        <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/drawable/ic_launcher_background.xml" value="0.28" />
+        <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/layout/activity_main.xml" value="0.33106884057971014" />
+        <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/layout/toolbar.xml" value="0.33106884057971014" />
+        <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/layout/toolbar_main.xml" value="0.17249240121580547" />
+        <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/menu/menu_toolbar.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/menu/toolbar_menu.xml" value="0.3546875" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
+  </component>Loleando.123
 </project>

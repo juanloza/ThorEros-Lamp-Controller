@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ThorEros lamp controller</string>
+    <string name="send">Enviar</string>
 </resources>
