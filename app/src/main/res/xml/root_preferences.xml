@@ -1,0 +1,22 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="@string/server">
+
+        <EditTextPreference
+            android:key="host_name"
+            app:title="@string/ip_hostname"
+            app:useSimpleSummaryProvider="true"
+            android:autofillHints="@string/server"
+            android:inputType="textUri"
+            />
+        <EditTextPreference
+            app:key="port"
+            app:title="@string/port"
+            android:inputType="number"
+            android:digits="0123456789"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

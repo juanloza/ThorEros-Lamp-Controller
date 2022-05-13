@@ -6,10 +6,13 @@
         <entry key="..\:/Users/Juan/.gradle/caches/transforms-3/914116008979e77bc79da871871e9f31/transformed/appcompat-1.4.1/res/layout/support_simple_spinner_dropdown_item.xml" value="0.33106884057971014" />
         <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/drawable/ic_launcher_background.xml" value="0.28" />
         <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/layout/activity_main.xml" value="0.33106884057971014" />
+        <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/layout/settings_activity.xml" value="0.33106884057971014" />
         <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/layout/toolbar.xml" value="0.33106884057971014" />
         <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/layout/toolbar_main.xml" value="0.17249240121580547" />
         <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/menu/menu_toolbar.xml" value="0.17604166666666668" />
-        <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/menu/toolbar_menu.xml" value="0.3546875" />
+        <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/menu/toolbar_menu.xml" value="0.25" />
+        <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.28" />
+        <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/app/src/main/res/xml/root_preferences.xml" value="0.33106884057971014" />
       </map>
     </option>
   </component>
@@ -18,5 +21,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>Loleando.123
+  </component>
 </project>
