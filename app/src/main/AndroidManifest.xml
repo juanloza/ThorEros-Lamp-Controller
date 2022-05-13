@@ -11,12 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ThorErosLampController">
         <activity
-            android:name=".SettingsActivity"
+            android:name=".Activities.SettingsActivity"
             android:exported="false"
             android:label="@string/title_activity_settings"
             android:theme="@style/Theme.ThorErosLampController.NoActionBar"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.ThorErosLampController.NoActionBar">
             <intent-filter>

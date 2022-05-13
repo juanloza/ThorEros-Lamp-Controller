@@ -1,4 +1,4 @@
-package thoreros.lamp.controller;
+package thoreros.lamp.controller.Activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import thoreros.lamp.controller.R;
 import thoreros.lamp.controller.databinding.MainActivityBinding;
 
 public class MainActivity extends AppCompatActivity {
