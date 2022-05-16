@@ -9,4 +9,41 @@
         <item>reply</item>
         <item>reply_all</item>
     </string-array>
+
+    <string-array name="modo_entries">
+        <item>Fire</item>
+        <item>Plain color</item>
+        <item>Beating</item>
+        <item>RGB Loop</item>
+        <item>Strobe</item>
+        <item>Fade InOut</item>
+        <item>Eyes</item>
+        <item>Cyclon bounce</item>
+        <item>New KITT</item>
+        <item>Twinkle</item>
+        <item>Twinkle Random</item>
+        <item>Sparkle</item>
+        <item>Snow sparkle</item>
+        <item>Running lights</item>
+        <item>Color wipe</item>
+        <item>Rainbow cycle</item>
+    </string-array>
+    <string-array name="modo_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+    </string-array>
 </resources>

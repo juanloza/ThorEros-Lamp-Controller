@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import thoreros.lamp.controller.Fragment.MainConfigFragment;
 import thoreros.lamp.controller.R;
 import thoreros.lamp.controller.databinding.MainActivityBinding;
 
@@ -22,6 +23,15 @@ public class MainActivity extends AppCompatActivity {
 
         binding = MainActivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        setSupportActionBar(binding.toolbarLayout.toolbar);
+
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.main_config, new MainConfigFragment())
+                    .commit();
+        }
         setSupportActionBar(binding.toolbarLayout.toolbar);
     }
 

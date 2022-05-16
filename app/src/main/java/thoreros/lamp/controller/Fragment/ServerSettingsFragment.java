@@ -2,7 +2,13 @@ package thoreros.lamp.controller.Fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.preference.ListPreference;
+import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
+
+import java.util.Objects;
 
 import thoreros.lamp.controller.R;
 

@@ -58,9 +58,7 @@ public class SettingsActivity extends AppCompatActivity {
                     return;
                 }
                 Toast.makeText(this,R.string.ping_fails, Toast.LENGTH_SHORT).show();
-            }, error -> {
-                Toast.makeText(this,R.string.ping_fails, Toast.LENGTH_SHORT).show();
-            });
+            }, error -> Toast.makeText(this,R.string.ping_fails, Toast.LENGTH_SHORT).show());
 //            JsonObjectRequest jsonRequest = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
 //                Toast.makeText(this,"Response: "+ response, Toast.LENGTH_SHORT).show();
 //            },error -> {
@@ -80,21 +78,6 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId() == R.id.btn_send){
-            Toast.makeText(this, "Enviar", Toast.LENGTH_SHORT).show();
-            return true;
-        }else if(item.getItemId() == R.id.btn_settings){
-            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
-
-            Intent intent = new Intent(this, SettingsActivity.class);
-            startActivity(intent);
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
