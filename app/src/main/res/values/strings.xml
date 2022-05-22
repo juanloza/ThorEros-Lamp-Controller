@@ -16,4 +16,6 @@
     <string name="lamp_effect_summary">Efecto de iluminación</string>
     <string name="fire_config">Fuego</string>
     <string name="plain_config">Color plano</string>
+    <string name="cooling">Enfriamiento</string>
+    <string name="sparking">Nuevas chispas</string>
 </resources>

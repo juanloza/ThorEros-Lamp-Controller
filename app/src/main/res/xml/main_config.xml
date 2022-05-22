@@ -8,39 +8,26 @@
             android:title="@string/lamp_effect"
             android:entries="@array/modo_entries"
             android:entryValues="@array/modo_values"
-            app:useSimpleSummaryProvider="true"/>
-    </PreferenceCategory>
-    <PreferenceCategory
-        android:key="FireConfig"
-        android:title="@string/fire_config">
-
-        <EditTextPreference
-            android:key="test_mode"
-            app:title="Test modo"
             app:useSimpleSummaryProvider="true"
             />
 
-        <thoreros.libraries.preference.ColorPickerPreference
-            app:key="firstColor"
-            android:title="Color fuegooooo"
-            android:summary="Color para pintarle la cara a tu ****"
-            app:colorpicker_showHex="true"
-            app:colorpicker_showAlpha="false"
-            app:colorpicker_showPreview="true" />
+<!--        <com.github.koston.preference.ColorPreference-->
+<!--            android:defaultValue="@color/purple_700"-->
+<!--            android:key="color_first"-->
+<!--            android:summary="Some summary"-->
+<!--            android:title="Color 1"-->
+<!--            app:hueWheelRadius="@dimen/defaultWheelRadius"-->
+<!--            app:hueWheelThickness="@dimen/defaultWheelThickness"-->
+<!--            app:centerCircleRadius="@dimen/defaultCenterRadius"-->
+<!--            app:centerCircleHaloRadius="@dimen/defaultCenterHaloRadius"-->
+<!--            app:huePointerRadius="@dimen/defaultPointerRadius"-->
+<!--            app:huePointerHaloRadius="@dimen/defaultPointerHaloRadius"-->
+<!--            app:barThickness="@dimen/defaultBarThickness"-->
+<!--            app:barLength="@dimen/sliderWidth"-->
+<!--            app:barPointerRadius="@dimen/defaultBarPointerRadius"-->
+<!--            app:barPointerHaloRadius="@dimen/defaultBarPointerHaloRadius"-->
+<!--            app:pointersHaloColor="#DD000000"-->
+<!--            app:indicatorColorPreview="true"/>-->
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="PlainColorConfig"
-        android:title="@string/plain_config">
-
-    <thoreros.libraries.preference.ColorPickerPreference
-        app:key="plain_color"
-        android:title="Color"
-        android:summary="Que color esperas? el de tus calzones??"
-        app:colorpicker_showHex="true"
-        app:colorpicker_showAlpha="false"
-        app:colorpicker_noneSelectedSummaryText=""
-        app:colorpicker_showPreview="true" />
     </PreferenceCategory>
 </PreferenceScreen>

@@ -1,0 +1,36 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="FireConfig"
+        android:title="@string/fire_config">
+
+        <SeekBarPreference
+            app:key="fire_cooling"
+            app:min="@integer/ubyte_min"
+            android:max="@integer/ubyte_max"
+            android:title="@string/cooling"/>
+
+        <SeekBarPreference
+            app:key="fire_sparking"
+            app:min="@integer/ubyte_min"
+            android:max="@integer/ubyte_max"
+            android:title="@string/sparking"/>
+
+<!--        <thoreros.lamp.controller.preference.PaletteListPreference-->
+<!--            app:key="fire_palette"-->
+<!--            android:entries="@array/modo_entries"-->
+<!--            android:entryValues="@array/modo_values"-->
+<!--            app:entryPreviewThumbnails="@array/palettes_thumbs" />-->
+
+        <thoreros.libraries.preference.ColorPickerPreference
+            app:key="firstColor"
+            android:title="Color fuegooooo"
+            android:summary="Color para pintarle la cara a tu ****"
+            app:colorpicker_showHex="true"
+            app:colorpicker_showAlpha="false"
+            app:colorpicker_showPreview="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

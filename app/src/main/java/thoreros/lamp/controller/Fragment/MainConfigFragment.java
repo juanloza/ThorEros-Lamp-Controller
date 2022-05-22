@@ -1,8 +1,10 @@
 package thoreros.lamp.controller.Fragment;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentManager;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
@@ -17,14 +19,9 @@ public class MainConfigFragment extends PreferenceFragmentCompat
         implements PreferenceFragmentCompat.OnPreferenceDisplayDialogCallback,
         Preference.OnPreferenceChangeListener {
         ListPreference listEffect;
-        PreferenceCategory catFuego;
-        PreferenceCategory catColorPlano;
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.main_config, rootKey);
-
-        catFuego = findPreference("FireConfig");
-        catColorPlano = findPreference("PlainColorConfig");
 
         listEffect = findPreference("lamp_mode");
         assert listEffect != null;
@@ -47,16 +44,30 @@ public class MainConfigFragment extends PreferenceFragmentCompat
     @Override
     public boolean onPreferenceChange(@NonNull Preference preference, Object newValue) {
         if(Objects.equals(preference.getKey(), "lamp_mode")){
+            ModeConfigFragment destFragment = null;
             switch (Integer.parseInt((String)newValue)){
                 case 0:
-                    catFuego.setVisible(true);
-                    catColorPlano.setVisible(false);
+                    destFragment = new FireConfigFragment();
                     break;
                 case 1:
-                    catFuego.setVisible(false);
-                    catColorPlano.setVisible(true);
+                    destFragment = new PlainConfigFragment();
                     break;
             }
+            if(destFragment != null){
+                getParentFragmentManager()
+                        .beginTransaction()
+                        .setCustomAnimations(
+                                R.anim.slide_in,  // enter
+                                R.anim.slide_out,  // exit
+                                R.anim.slide_in,   // popEnter
+                                R.anim.slide_out  // popExit
+                        )
+                        .replace(R.id.mode_config, destFragment)
+                        .commit();
+            }else{
+                Toast.makeText(this.getContext(), "Option not supported yet", Toast.LENGTH_SHORT).show();
+            }
+
             return true;
         }
         return false;
