@@ -6,24 +6,35 @@
         android:title="@string/fire_config">
 
         <SeekBarPreference
-            app:key="fire_cooling"
-            app:min="@integer/ubyte_min"
+            android:key="fire_cooling"
+            android:min="@integer/ubyte_min"
             android:max="@integer/ubyte_max"
-            android:title="@string/cooling"/>
+            android:title="@string/cooling"
+            app:showSeekBarValue="true" />
 
         <SeekBarPreference
-            app:key="fire_sparking"
-            app:min="@integer/ubyte_min"
+            android:key="fire_sparking"
+            android:min="@integer/ubyte_min"
             android:max="@integer/ubyte_max"
-            android:title="@string/sparking"/>
+            android:title="@string/sparking"
+            app:showSeekBarValue="true" />
 
-<!--        <thoreros.lamp.controller.preference.PaletteListPreference-->
-<!--            app:key="fire_palette"-->
-<!--            android:entries="@array/modo_entries"-->
-<!--            android:entryValues="@array/modo_values"-->
-<!--            app:entryPreviewThumbnails="@array/palettes_thumbs" />-->
+        <thoreros.libraries.preference.palette.PalettePreference
+            app:key="fire_palette"
+            android:entries="@array/modo_entries"
+            android:entryValues="@array/modo_values"
+            android:defaultValue="0"
+            app:entryPreviewThumbnails="@array/palettes_thumbs"
+            app:useSimpleSummaryProvider="true" />
 
-        <thoreros.libraries.preference.ColorPickerPreference
+        <ListPreference
+            app:key="fire_palette2"
+            android:entries="@array/modo_entries"
+            android:entryValues="@array/modo_values"
+            android:defaultValue="0"
+            app:useSimpleSummaryProvider="true" />
+
+        <thoreros.libraries.preference.colorpicker.ColorPickerPreference
             app:key="firstColor"
             android:title="Color fuegooooo"
             android:summary="Color para pintarle la cara a tu ****"

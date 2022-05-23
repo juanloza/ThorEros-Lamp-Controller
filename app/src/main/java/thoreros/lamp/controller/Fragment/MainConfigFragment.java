@@ -4,20 +4,15 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentManager;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceCategory;
-import androidx.preference.PreferenceFragmentCompat;
-
 import java.util.Objects;
 
 import thoreros.lamp.controller.R;
-import thoreros.libraries.preference.ColorPickerPreference;
+import thoreros.libraries.preference.PreferenceFragment;
 
-public class MainConfigFragment extends PreferenceFragmentCompat
-        implements PreferenceFragmentCompat.OnPreferenceDisplayDialogCallback,
-        Preference.OnPreferenceChangeListener {
+public class MainConfigFragment extends PreferenceFragment
+        implements Preference.OnPreferenceChangeListener {
         ListPreference listEffect;
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -28,18 +23,6 @@ public class MainConfigFragment extends PreferenceFragmentCompat
         listEffect.setOnPreferenceChangeListener(this);
     }
 
-    @Override
-    public void onDisplayPreferenceDialog(@NonNull Preference preference) {
-        if (preference instanceof ColorPickerPreference) {
-            ((ColorPickerPreference) preference).showDialog(this, 0);
-        } else super.onDisplayPreferenceDialog(preference);
-    }
-
-
-    @Override
-    public boolean onPreferenceDisplayDialog(@NonNull PreferenceFragmentCompat caller, @NonNull Preference pref) {
-        return false;
-    }
 
     @Override
     public boolean onPreferenceChange(@NonNull Preference preference, Object newValue) {

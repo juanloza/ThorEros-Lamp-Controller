@@ -5,7 +5,7 @@
         android:key="PlainColorConfig"
         android:title="@string/plain_config">
 
-    <thoreros.libraries.preference.ColorPickerPreference
+    <thoreros.libraries.preference.colorpicker.ColorPickerPreference
         app:key="plain_color"
         android:title="Color"
         android:summary="Que color esperas? el de tus calzones??"

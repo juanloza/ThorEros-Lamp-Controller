@@ -11,7 +11,7 @@
             app:useSimpleSummaryProvider="true"
             />
 
-<!--        <com.github.koston.preference.ColorPreference-->
+<!--        <com.github.koston.colorpicker.ColorPreference-->
 <!--            android:defaultValue="@color/purple_700"-->
 <!--            android:key="color_first"-->
 <!--            android:summary="Some summary"-->
