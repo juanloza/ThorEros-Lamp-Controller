@@ -5,4 +5,6 @@
     <dimen name="hexFieldWidth">88dp</dimen> <!-- 2 * slider width + margin. Explicit for when alpha is hidden in landscape -->
     <dimen name="preference_thumbnail_size">48dp</dimen>
     <dimen name="widget_stroke_width">2dp</dimen>
+    <dimen name="dialog_padding_top_material">18dp</dimen>
+    <dimen name="dialog_title_divider_material">8dp</dimen>
 </resources>

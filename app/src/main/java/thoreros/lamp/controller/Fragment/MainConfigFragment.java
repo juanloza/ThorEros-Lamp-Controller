@@ -21,12 +21,18 @@ public class MainConfigFragment extends PreferenceFragment
         listEffect = findPreference("lamp_mode");
         assert listEffect != null;
         listEffect.setOnPreferenceChangeListener(this);
+        if (savedInstanceState == null) {
+            onPreferenceChange(listEffect, listEffect.getValue());
+        }
     }
 
 
     @Override
     public boolean onPreferenceChange(@NonNull Preference preference, Object newValue) {
         if(Objects.equals(preference.getKey(), "lamp_mode")){
+            if(newValue == null){
+                return true;
+            }
             ModeConfigFragment destFragment = null;
             switch (Integer.parseInt((String)newValue)){
                 case 0:

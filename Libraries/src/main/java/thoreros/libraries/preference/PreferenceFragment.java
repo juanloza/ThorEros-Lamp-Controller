@@ -16,6 +16,9 @@ public abstract class PreferenceFragment extends PreferenceFragmentCompat {
     @Override
     public void onDisplayPreferenceDialog(@NonNull Preference preference) {
         final DialogFragment f;
+        if (getParentFragmentManager().findFragmentByTag(preference.getKey()) != null) {
+            return;
+        }
         if (preference instanceof ColorPickerPreference) {
             f = ColorPickerPreferenceFragment.newInstance(preference.getKey());
         } else if (preference instanceof PalettePreference) {

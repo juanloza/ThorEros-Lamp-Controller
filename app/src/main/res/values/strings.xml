@@ -18,4 +18,6 @@
     <string name="plain_config">Color plano</string>
     <string name="cooling">Enfriamiento</string>
     <string name="sparking">Nuevas chispas</string>
+    <string name="flame_color">Color</string>
+    <string name="flame_palette">Paleta de color</string>
 </resources>

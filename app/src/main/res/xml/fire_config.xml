@@ -21,26 +21,12 @@
 
         <thoreros.libraries.preference.palette.PalettePreference
             app:key="fire_palette"
-            android:entries="@array/modo_entries"
-            android:entryValues="@array/modo_values"
+            android:title="@string/flame_palette"
+            android:entries="@array/palettes_entries"
+            android:entryValues="@array/palettes_values"
             android:defaultValue="0"
             app:entryPreviewThumbnails="@array/palettes_thumbs"
             app:useSimpleSummaryProvider="true" />
-
-        <ListPreference
-            app:key="fire_palette2"
-            android:entries="@array/modo_entries"
-            android:entryValues="@array/modo_values"
-            android:defaultValue="0"
-            app:useSimpleSummaryProvider="true" />
-
-        <thoreros.libraries.preference.colorpicker.ColorPickerPreference
-            app:key="firstColor"
-            android:title="Color fuegooooo"
-            android:summary="Color para pintarle la cara a tu ****"
-            app:colorpicker_showHex="true"
-            app:colorpicker_showAlpha="false"
-            app:colorpicker_showPreview="true" />
 
     </PreferenceCategory>
 

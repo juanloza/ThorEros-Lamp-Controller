@@ -55,7 +55,7 @@
         <item>1</item>
     </string-array>
     <string-array name="palettes_thumbs">
-        <item>@drawable/test_gradient</item>
-        <item>@drawable/test_gradient2</item>
+        <item>@drawable/paleta_fuego</item>
+        <item>@drawable/paleta_llama_azul</item>
     </string-array>
 </resources>
