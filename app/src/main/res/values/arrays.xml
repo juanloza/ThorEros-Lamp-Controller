@@ -48,14 +48,47 @@
     </string-array>
     <string-array name="palettes_entries">
         <item>Fuego</item>
+        <item>Llama verde</item>
+        <item>Llama verde azulada</item>
         <item>Llama azul</item>
+        <item>Llama violeta</item>
+        <item>Llama rosa</item>
+        <item>Llama naranja</item>
+        <item>Fuego</item>
+        <item>Llama verde</item>
+        <item>Llama verde azulada</item>
+        <item>Llama azul</item>
+        <item>Llama violeta</item>
+        <item>Llama rosa</item>
     </string-array>
     <string-array name="palettes_values">
         <item>0</item>
         <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
     </string-array>
     <string-array name="palettes_thumbs">
         <item>@drawable/paleta_fuego</item>
+        <item>@drawable/paleta_llama_verde_amarilla</item>
+        <item>@drawable/paleta_llama_verde_azul</item>
         <item>@drawable/paleta_llama_azul</item>
+        <item>@drawable/paleta_llama_violeta</item>
+        <item>@drawable/paleta_llama_rosa</item>
+        <item>@drawable/paleta_llama_naranja</item>
+        <item>@drawable/paleta_fuego</item>
+        <item>@drawable/paleta_llama_verde_amarilla</item>
+        <item>@drawable/paleta_llama_verde_azul</item>
+        <item>@drawable/paleta_llama_azul</item>
+        <item>@drawable/paleta_llama_violeta</item>
+        <item>@drawable/paleta_llama_rosa</item>
     </string-array>
 </resources>

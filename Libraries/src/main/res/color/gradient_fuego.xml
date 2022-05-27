@@ -7,15 +7,15 @@
     android:endX="200"
     android:endY="0">
         <item
-            android:color="#FCFFFFFF"
+            android:color="#FFFFFFFF"
             android:offset="0.0" />
         <item
-            android:color="#FCFFFF00"
+            android:color="#FFFFFF00"
             android:offset="0.333" />
         <item
-            android:color="#FCFF0000"
+            android:color="#FFFF0000"
             android:offset="0.666" />
         <item
-            android:color="#FC000000"
+            android:color="#FF000000"
             android:offset="1.0" />
 </gradient>

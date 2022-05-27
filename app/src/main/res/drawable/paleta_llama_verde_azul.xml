@@ -15,11 +15,12 @@
                 <item
                     android:color="#FFFFFFFF"
                     android:offset="0.0" />
+
                 <item
-                    android:color="#FFFFFF00"
+                    android:color="#FF00FFFF"
                     android:offset="0.333" />
                 <item
-                    android:color="#FFFF0000"
+                    android:color="#FF00FF00"
                     android:offset="0.666" />
                 <item
                     android:color="#FF000000"
