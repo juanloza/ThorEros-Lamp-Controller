@@ -1,21 +1,23 @@
 package thoreros.lamp.controller.Activities;
 
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.preference.PreferenceManager;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
+import java.util.Map;
 
 import thoreros.lamp.controller.Fragment.ServerSettingsFragment;
 import thoreros.lamp.controller.R;
@@ -41,8 +43,9 @@ public class SettingsActivity extends AppCompatActivity {
 
         Button testButton = binding.btnTestConnection;
         testButton.setOnClickListener(view -> {
-            String server = PreferenceManager.getDefaultSharedPreferences(this).getString("host_name","");
-            String port = PreferenceManager.getDefaultSharedPreferences(this).getString("port","");
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+            String server = prefs.getString("host_name","");
+            String port = prefs.getString("port","");
             String url = "http://"+server;
             url = url.replaceAll("[/\\s]+$","");
             if(!port.equals("")){

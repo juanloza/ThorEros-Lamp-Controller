@@ -5,11 +5,13 @@
         <attr name="radialMargin" format="dimension" />
     </declare-styleable>
     <declare-styleable name="ColorPicker">
-        <attr name="colorpicker_selectNoneButtonText" format="string" />
-        <attr name="colorpicker_noneSelectedSummaryText" format="string" />
-        <attr name="colorpicker_showAlpha" format="boolean"/>
-        <attr name="colorpicker_showHex" format="boolean"/>
-        <attr name="colorpicker_showPreview" format="boolean"/>
+        <attr name="selectNoneButtonText" format="string" />
+        <attr name="noneSelectedSummaryText" format="string" />
+        <attr name="showValue" format="boolean"/>
+        <attr name="valueMaxIfHidden" format="boolean"/>
+        <attr name="showAlpha" format="boolean"/>
+        <attr name="showHex" format="boolean"/>
+        <attr name="showPreview" format="boolean"/>
     </declare-styleable>
     <declare-styleable name="PalettePreference">
         <attr name="entryPreviewThumbnails" format="reference|string|integer" />

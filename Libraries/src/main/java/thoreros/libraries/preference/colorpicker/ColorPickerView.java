@@ -29,6 +29,7 @@ import thoreros.libraries.preference.R;
 
 public class ColorPickerView extends FrameLayout {
 
+	private final ValueView valueView;
 	private final AlphaView alphaView;
 	private final EditText hexEdit;
 	private final ObservableColor observableColor = new ObservableColor(0);
@@ -48,7 +49,7 @@ public class ColorPickerView extends FrameLayout {
 		HueSatView hueSatView = findViewById(R.id.hueSatView);
 		hueSatView.observeColor(observableColor);
 
-		ValueView valueView = findViewById(R.id.valueView);
+		valueView = findViewById(R.id.valueView);
 		valueView.observeColor(observableColor);
 
 		alphaView = findViewById(R.id.alphaView);
@@ -66,9 +67,10 @@ public class ColorPickerView extends FrameLayout {
 	private void applyAttributes(AttributeSet attrs) {
 		if (attrs != null) {
 			TypedArray a = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.ColorPicker, 0, 0);
-			showAlpha(a.getBoolean(R.styleable.ColorPicker_colorpicker_showAlpha, true));
-			showHex(a.getBoolean(R.styleable.ColorPicker_colorpicker_showHex, true));
-			showPreview(a.getBoolean(R.styleable.ColorPicker_colorpicker_showPreview, true));
+			showValue(a.getBoolean(R.styleable.ColorPicker_showValue, true), a.getBoolean(R.styleable.ColorPicker_valueMaxIfHidden, true));
+			showAlpha(a.getBoolean(R.styleable.ColorPicker_showAlpha, true));
+			showHex(a.getBoolean(R.styleable.ColorPicker_showHex, true));
+			showPreview(a.getBoolean(R.styleable.ColorPicker_showPreview, true));
 		}
 	}
 
@@ -120,6 +122,13 @@ public class ColorPickerView extends FrameLayout {
 	/** Updates the current color without changing the original color swatch. */
 	public void setCurrentColor(int alpha, float hue, float sat, float bri) {
 		observableColor.updateColor(alpha, hue, sat, bri, null);
+	}
+
+	public void showValue(boolean showValue, boolean valueMaxIfHidden) {
+		valueView.setVisibility(showValue ? View.VISIBLE : View.GONE);
+		if(!showValue && valueMaxIfHidden){
+			observableColor.updateValue(1, this.valueView);
+		}
 	}
 
 	public void showAlpha(boolean showAlpha) {

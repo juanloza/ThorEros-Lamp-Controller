@@ -54,7 +54,9 @@ class HexEdit {
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before, int count) {
 				int color = parseHexColor(s);
-				if (shouldTrimAlphaDigits()) color = color | 0xff000000;
+				if (shouldTrimAlphaDigits()){
+					color = color | 0xff000000;
+				}
 				observableColor.updateColor(color, this);
 			}
 

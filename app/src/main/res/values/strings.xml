@@ -20,4 +20,5 @@
     <string name="sparking">Nuevas chispas</string>
     <string name="flame_color">Color</string>
     <string name="flame_palette">Paleta de color</string>
+    <string name="brighness">Intensidad</string>
 </resources>

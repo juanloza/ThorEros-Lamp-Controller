@@ -5,13 +5,22 @@
         android:key="PlainColorConfig"
         android:title="@string/plain_config">
 
-    <thoreros.libraries.preference.colorpicker.ColorPickerPreference
-        app:key="plain_color"
-        android:title="Color"
-        android:summary="Que color esperas? el de tus calzones??"
-        app:colorpicker_showHex="true"
-        app:colorpicker_showAlpha="false"
-        app:colorpicker_noneSelectedSummaryText=""
-        app:colorpicker_showPreview="true" />
+        <thoreros.libraries.preference.colorpicker.ColorPickerPreference
+            app:key="plain_color"
+            android:title="Color"
+            app:showValue="true"
+            app:valueMaxIfHidden="false"
+            app:showHex="true"
+            app:showAlpha="false"
+            app:noneSelectedSummaryText="No tienes color chato"
+            app:showPreview="true"
+            />
+<!--        <SeekBarPreference-->
+<!--            android:key="plain_brighness"-->
+<!--            android:min="@integer/ubyte_min"-->
+<!--            android:max="@integer/ubyte_max"-->
+<!--            android:title="@string/brighness"-->
+<!--            app:updatesContinuously="true"-->
+<!--            app:showSeekBarValue="true" />-->
     </PreferenceCategory>
 </PreferenceScreen>
