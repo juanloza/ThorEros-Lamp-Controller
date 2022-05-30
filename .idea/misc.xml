@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Juan/.gradle/caches/transforms-3/31c3038110c960e3483297c0a42381e1/transformed/preference-1.2.0/res/layout/image_frame.xml" value="0.1359375" />
-        <entry key="..\:/Users/Juan/.gradle/caches/transforms-3/31c3038110c960e3483297c0a42381e1/transformed/preference-1.2.0/res/layout/preference_material.xml" value="0.1" />
+        <entry key="..\:/Users/Juan/.gradle/caches/transforms-3/31c3038110c960e3483297c0a42381e1/transformed/preference-1.2.0/res/layout/preference.xml" value="0.175" />
+        <entry key="..\:/Users/Juan/.gradle/caches/transforms-3/31c3038110c960e3483297c0a42381e1/transformed/preference-1.2.0/res/layout/preference_material.xml" value="0.18" />
+        <entry key="..\:/Users/Juan/.gradle/caches/transforms-3/3b1bc201b3bca652ca8cba6f27421397/transformed/appcompat-1.4.1/res/drawable/abc_list_selector_holo_dark.xml" value="0.18" />
         <entry key="..\:/Users/Juan/.gradle/caches/transforms-3/914116008979e77bc79da871871e9f31/transformed/appcompat-1.4.1/res/layout/support_simple_spinner_dropdown_item.xml" value="0.33106884057971014" />
         <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/ColorPicker/src/main/res/drawable/circle.xml" value="0.1845" />
         <entry key="..\:/Users/Juan/AndroidStudioProjects/ThorEroslampcontroller/ColorPicker/src/main/res/layout/picker.xml" value="0.17604166666666668" />
@@ -28,6 +30,7 @@
         <entry key="..\:/Users/Juan/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/list_content_simple.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/Juan/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/preference_dialog_edittext.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/Juan/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/preference_dialog_seekbar_material.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/Juan/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/preference_holo.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/Juan/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/preference_list_fragment.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/Juan/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/preference_material.xml" value="0.1" />
         <entry key="..\:/Users/Juan/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/select_dialog.xml" value="0.35052083333333334" />
@@ -55,10 +58,14 @@
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/test_gradient.xml" value="0.25" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/test_gradient2.xml" value="0.173" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/layout/main_activity.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/layout/mode_config_activity.xml" value="0.175" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/layout/preference_base.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/layout/settings_activity.xml" value="0.35052083333333334" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/layout/toolbar.xml" value="0.3463541666666667" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/fire_config.xml" value="0.25" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/main_config.xml" value="0.1" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/mode_config.xml" value="0.33" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/plain_config.xml" value="0.33" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/server_preferences.xml" value="0.35052083333333334" />
       </map>
     </option>

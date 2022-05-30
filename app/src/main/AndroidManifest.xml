@@ -15,7 +15,7 @@
             android:label="@string/title_activity_settings"
             android:theme="@style/Theme.ThorErosLampController.NoActionBar"/>
         <activity
-            android:name=".Activities.MainActivity"
+            android:name=".Activities.ModeConfigActivity"
             android:exported="true"
             android:theme="@style/Theme.ThorErosLampController.NoActionBar">
             <intent-filter>

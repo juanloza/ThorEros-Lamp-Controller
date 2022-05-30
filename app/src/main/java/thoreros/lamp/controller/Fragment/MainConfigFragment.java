@@ -16,7 +16,7 @@ public class MainConfigFragment extends PreferenceFragment
         ListPreference listEffect;
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        setPreferencesFromResource(R.xml.main_config, rootKey);
+        setPreferencesFromResource(R.xml.mode_config, rootKey);
 
         listEffect = findPreference("lamp_mode");
         assert listEffect != null;

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <item name="default_brighness" type="integer">255</item>
+    <item name="default_plain_num_leds" type="integer">4</item>
     <item name="ubyte_min" type="integer">0</item>
     <item name="ubyte_max" type="integer">255</item>
+    <item name="numleds_min" type="integer">0</item>
+    <item name="numleds_max" type="integer">5</item>
 </resources>

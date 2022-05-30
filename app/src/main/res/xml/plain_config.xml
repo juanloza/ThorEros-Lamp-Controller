@@ -8,19 +8,29 @@
         <thoreros.libraries.preference.colorpicker.ColorPickerPreference
             app:key="plain_color"
             android:title="Color"
-            app:showValue="true"
-            app:valueMaxIfHidden="false"
+            app:showValue="false"
+            app:valueMaxIfHidden="true"
             app:showHex="true"
             app:showAlpha="false"
             app:noneSelectedSummaryText="No tienes color chato"
             app:showPreview="true"
             />
-<!--        <SeekBarPreference-->
-<!--            android:key="plain_brighness"-->
-<!--            android:min="@integer/ubyte_min"-->
-<!--            android:max="@integer/ubyte_max"-->
-<!--            android:title="@string/brighness"-->
-<!--            app:updatesContinuously="true"-->
-<!--            app:showSeekBarValue="true" />-->
+
+        <SeekBarPreference
+            android:key="plain_brighness"
+            android:min="@integer/ubyte_min"
+            android:max="@integer/ubyte_max"
+            android:title="@string/brightness"
+            android:defaultValue="@integer/default_brighness"
+            app:updatesContinuously="true"
+            app:showSeekBarValue="false" />
+
+        <SeekBarPreference
+            android:key="plain_num_leds"
+            android:min="@integer/numleds_min"
+            android:max="@integer/numleds_max"
+            android:title="@string/plain_num_leds"
+            android:defaultValue="@integer/default_plain_num_leds"
+            app:showSeekBarValue="false" />
     </PreferenceCategory>
 </PreferenceScreen>

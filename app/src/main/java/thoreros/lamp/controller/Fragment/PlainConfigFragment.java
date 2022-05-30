@@ -12,7 +12,7 @@ import thoreros.libraries.preference.colorpicker.ColorPickerPreference;
 import thoreros.libraries.preference.colorpicker.ObservableColor;
 
 public class PlainConfigFragment extends ModeConfigFragment{
-//    SeekBarPreference brighness;
+//    SeekBarPreference brightness;
 //    ColorPickerPreference colorpicker;
 
     @Override
@@ -21,9 +21,9 @@ public class PlainConfigFragment extends ModeConfigFragment{
 
         //Test change color value with external sekkbarPreference
 //        colorpicker = findPreference("plain_color");
-//        brighness = findPreference("plain_brighness");
-//        assert brighness != null;
-//        brighness.setOnPreferenceChangeListener((preference, newValue) -> {
+//        brightness = findPreference("plain_brighness");
+//        assert brightness != null;
+//        brightness.setOnPreferenceChangeListener((preference, newValue) -> {
 //            ObservableColor color = new ObservableColor(colorpicker.getColor());
 //            float convertedValue = (float) (Integer) newValue /0xff;
 //            color.updateValue(convertedValue,null);

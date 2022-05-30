@@ -45,34 +45,36 @@
 <!--            android:paddingBottom="4dp">-->
 <!--        </LinearLayout>-->
 
+        <!-- Preference should place its actual preference widget here. -->
         <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingStart="56dp"
             android:paddingTop="16dp"
-            android:paddingBottom="16dp"
-            android:paddingStart="56dp">
+            android:paddingBottom="16dp">
 
-            <TextView android:id="@android:id/title"
+            <TextView
+                android:id="@android:id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:ellipsize="marquee"
                 android:singleLine="true"
-                android:textAppearance="?android:attr/textAppearanceListItem"
-                android:ellipsize="marquee" />
+                android:textAppearance="?android:attr/textAppearanceListItem" />
 
-            <TextView android:id="@android:id/summary"
+            <TextView
+                android:id="@android:id/summary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@android:id/title"
                 android:layout_alignStart="@android:id/title"
-                android:textAppearance="?android:attr/textAppearanceListItemSecondary"
-                android:textColor="?android:attr/textColorSecondary"
+                android:ellipsize="end"
                 android:maxLines="10"
-                android:ellipsize="end" />
+                android:textAppearance="?android:attr/textAppearanceListItemSecondary"
+                android:textColor="?android:attr/textColorSecondary" />
 
         </RelativeLayout>
 
-        <!-- Preference should place its actual preference widget here. -->
         <LinearLayout android:id="@android:id/widget_frame"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

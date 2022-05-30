@@ -10,6 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -17,17 +18,18 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import thoreros.lamp.controller.Fragment.MainConfigFragment;
 import thoreros.lamp.controller.R;
-import thoreros.lamp.controller.databinding.MainActivityBinding;
+import thoreros.lamp.controller.databinding.ModeConfigActivityBinding;
 
-public class MainActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
+public class ModeConfigActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-    protected MainActivityBinding binding;
+    protected ModeConfigActivityBinding binding;
     protected RequestQueue queue;
     protected String url;
     SharedPreferences sharedPreferences;
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = MainActivityBinding.inflate(getLayoutInflater());
+        binding = ModeConfigActivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbarLayout.toolbar);
 
@@ -50,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
         setSupportActionBar(binding.toolbarLayout.toolbar);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+
+        binding.btnSend2.setOnClickListener(view -> sendConfigRequest());
 
         String server = sharedPreferences.getString("host_name","");
         String port = sharedPreferences.getString("port","");
@@ -71,41 +75,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.btn_send){
-            int mode = Integer.parseInt(sharedPreferences.getString("lamp_mode", "0"));
-            String[] modes = getResources().getStringArray(R.array.modo_entries);
-            String prefTxt = "Modo: "+modes[mode]+"\n";
-            switch (mode) {
-                case 0:
-                    prefTxt += "Cooling: " + sharedPreferences.getInt("fire_cooling", 0) + "\n";
-                    prefTxt += "Sparking: " + sharedPreferences.getInt("fire_sparking", 0) + "\n";
-                    String[] palettes = getResources().getStringArray(R.array.palettes_entries);
-                    int palette = Integer.parseInt(sharedPreferences.getString("fire_palette", "0"));
-                    prefTxt += "Paleta de color: " + palettes[palette] + "\n";
-                    break;
-                case 1:
-                    int color = sharedPreferences.getInt("plain_color", 0);
-                    prefTxt += "Color: #" + String.format("%06x", color & 0x00ffffff);
-                    break;
-            }
-
-            if(queue==null){
-                queue = Volley.newRequestQueue(this);
-            }
-            StringRequest configRequest = new StringRequest(Request.Method.POST, url, response -> {
-                if(response.equals("OK")){
-                    Toast.makeText(this,"Datos enviados", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                Toast.makeText(this,R.string.ping_fails, Toast.LENGTH_SHORT).show();
-            }, error -> Toast.makeText(this,R.string.ping_fails, Toast.LENGTH_SHORT).show())
-            {
-                @Nullable
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
-                    return getConfigRequestParams();
-                }
-            };
-            Toast.makeText(this, prefTxt, Toast.LENGTH_LONG).show();
+            sendConfigRequest();
             return true;
         }else if(item.getItemId() == R.id.btn_settings){
             Intent intent = new Intent(this, SettingsActivity.class);
@@ -113,6 +83,47 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    protected void sendConfigRequest(){
+        int mode = Integer.parseInt(sharedPreferences.getString("lamp_mode", "0"));
+        String[] modes = getResources().getStringArray(R.array.modo_entries);
+        String prefTxt = "Modo: "+modes[mode]+"\n";
+        switch (mode) {
+            case 0:
+                prefTxt += "Cooling: " + sharedPreferences.getInt("fire_cooling", 0) + "\n";
+                prefTxt += "Sparking: " + sharedPreferences.getInt("fire_sparking", 0) + "\n";
+                String[] palettes = getResources().getStringArray(R.array.palettes_entries);
+                int palette = Integer.parseInt(sharedPreferences.getString("fire_palette", "0"));
+                prefTxt += "Paleta de color: " + palettes[palette] + "\n";
+                break;
+            case 1:
+                int color = sharedPreferences.getInt("plain_color", 0);
+                prefTxt += "Color: #" + String.format("%06x", color & 0x00ffffff) + "\n";
+                prefTxt += "Brightness: #" + sharedPreferences.getInt("plain_brighness", 255) + "\n";
+                prefTxt += "Leds encendidos: #" + sharedPreferences.getInt("plain_num_leds", 255) + "\n";
+                break;
+        }
+
+        if(queue==null){
+            queue = Volley.newRequestQueue(this);
+        }
+        StringRequest configRequest = new StringRequest(Request.Method.POST, url, response -> {
+            if(response.equals("OK")){
+                Toast.makeText(this,"Datos enviados", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            Toast.makeText(this,R.string.ping_fails, Toast.LENGTH_SHORT).show();
+        }, error -> Toast.makeText(this,R.string.ping_fails, Toast.LENGTH_SHORT).show())
+        {
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() {
+                return getConfigRequestParams();
+            }
+        };
+
+        Toast.makeText(this, prefTxt, Toast.LENGTH_LONG).show();
     }
 
     protected Map<String,String> getConfigRequestParams(){
