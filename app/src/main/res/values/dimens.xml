@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="preference_item_padding_inner">8dip</dimen>
-    <dimen name="preference_item_padding_side">1dip</dimen>
+    <dimen name="preference_item_padding_side">100dip</dimen>
     <dimen name="preference_widget_width">48dp</dimen>
     <dimen name="preference_icon_minWidth" tools:override="true">1dp</dimen>
 

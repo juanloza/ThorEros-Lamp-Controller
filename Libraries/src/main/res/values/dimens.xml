@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources
+    xmlns:tools="http://schemas.android.com/tools">
     <dimen name="margin">16dp</dimen>
     <dimen name="sliderWidth">36dp</dimen> <!--Matches checker pattern-->
     <dimen name="hexFieldWidth">88dp</dimen> <!-- 2 * slider width + margin. Explicit for when alpha is hidden in landscape -->
@@ -7,4 +8,7 @@
     <dimen name="widget_stroke_width">2dp</dimen>
     <dimen name="dialog_padding_top_material">18dp</dimen>
     <dimen name="dialog_title_divider_material">8dp</dimen>
+
+    <dimen name="preference_seekbar_padding_horizontal" tools:override="true">0dp</dimen>
+    <dimen name="preference_seekbar_padding_vertical" tools:override="true">15dp</dimen>
 </resources>

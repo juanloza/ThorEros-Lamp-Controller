@@ -3,12 +3,19 @@
 
     <PreferenceCategory>
 
+        <SwitchPreference
+            android:key="lamp_enabled"
+            android:defaultValue="false"
+            android:title="@string/enable"
+            app:iconSpaceReserved="false" />
+
         <ListPreference
             android:key="lamp_mode"
             android:title="@string/lamp_effect"
             android:entries="@array/modo_entries"
             android:entryValues="@array/modo_values"
             app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false"
             />
 
 <!--        <com.github.koston.colorpicker.ColorPreference-->

@@ -12,12 +12,10 @@
         <activity
             android:name=".Activities.SettingsActivity"
             android:exported="false"
-            android:label="@string/title_activity_settings"
-            android:theme="@style/Theme.ThorErosLampController.NoActionBar"/>
+            android:label="@string/title_activity_settings" />
         <activity
             android:name=".Activities.ModeConfigActivity"
-            android:exported="true"
-            android:theme="@style/Theme.ThorErosLampController.NoActionBar">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

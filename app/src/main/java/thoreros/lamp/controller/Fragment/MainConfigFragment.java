@@ -33,7 +33,7 @@ public class MainConfigFragment extends PreferenceFragment
             if(newValue == null){
                 return true;
             }
-            ModeConfigFragment destFragment = null;
+            PreferenceFragment destFragment = null;
             switch (Integer.parseInt((String)newValue)){
                 case 0:
                     destFragment = new FireConfigFragment();

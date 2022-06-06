@@ -4,19 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.ModeConfigActivity">
+    tools:context=".Activities.ModeConfigActivity"
+    >
 
     <include
         android:id="@+id/toolbar_layout"
         layout="@layout/toolbar"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+    <ProgressBar
+        android:id="@+id/progressbar"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        android:layout_marginBottom="-8dp"
+        android:layout_marginTop="-4dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        />
+<!--        style="@android:style/Widget.Material.ProgressBar.Horizontal"-->
+
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="-8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_layout"
+        app:layout_constraintTop_toBottomOf="@id/progressbar"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
@@ -45,7 +60,7 @@
         android:layout_marginBottom="@dimen/fab_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_baseline_send_24"
+        app:srcCompat="@drawable/ic_send_48"
         android:contentDescription="@string/send" />
 
 

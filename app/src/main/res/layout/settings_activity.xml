@@ -27,5 +27,5 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:text="@string/test_connection"
-        android:drawableLeft="@drawable/ic_round_sync_alt_24"/>
+        app:icon="@drawable/ic_sync_48"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,7 @@ public class PalettePreference extends ListPreference {
     Drawable[] mEntryImages;
     int[] mEntryImagesResIds;
     private Drawable mSelectedImage;
+    boolean mShowSummary;
     private int mSelectedImageResId;
 
     public PalettePreference(@NonNull Context context, @Nullable AttributeSet attrs) {
@@ -24,6 +25,9 @@ public class PalettePreference extends ListPreference {
 
         TypedArray a = context.obtainStyledAttributes(
                 attrs, R.styleable.PalettePreference, 0, 0);
+
+        mShowSummary = a.getBoolean(R.styleable.PalettePreference_showSummary,true);
+
 
         int thumbResId = a.getResourceId(R.styleable.PalettePreference_entryPreviewThumbnails,0);
         TypedArray thumbRes = a.getResources().obtainTypedArray(thumbResId);
@@ -66,4 +70,12 @@ public class PalettePreference extends ListPreference {
         }
     }
 
+    @Override
+    public CharSequence getSummary() {
+        if(mShowSummary){
+            return super.getSummary();
+        }else{
+            return null;
+        }
+    }
 }

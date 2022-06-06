@@ -1,39 +1,49 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:iconSpaceReserved="false">
+    xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <PreferenceCategory
         android:key="FireConfig"
         android:title="@string/fire_config"
-        android:iconSpaceReserved="false"
+        app:iconSpaceReserved="false"
         >
 
         <SeekBarPreference
             android:key="fire_cooling"
-            android:iconSpaceReserved="false"
             android:min="@integer/ubyte_min"
             android:max="@integer/ubyte_max"
             android:title="@string/cooling"
             app:showSeekBarValue="true"
+            app:iconSpaceReserved="false"
             />
 
         <SeekBarPreference
             android:key="fire_sparking"
-            android:iconSpaceReserved="false"
             android:min="@integer/ubyte_min"
             android:max="@integer/ubyte_max"
             android:title="@string/sparking"
-            app:showSeekBarValue="true" />
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false"/>
 
         <thoreros.libraries.preference.palette.PalettePreference
             app:key="fire_palette"
-            android:iconSpaceReserved="false"
             android:title="@string/flame_palette"
             android:entries="@array/palettes_entries"
             android:entryValues="@array/palettes_values"
             android:defaultValue="0"
             app:entryPreviewThumbnails="@array/palettes_thumbs"
-            app:useSimpleSummaryProvider="true" />
+            app:showSummary="true"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false" />
+
+        <SeekBarPreference
+            android:key="fire_brightness"
+            android:min="@integer/ubyte_min"
+            android:max="@integer/ubyte_max"
+            android:title="@string/brightness"
+            android:defaultValue="@integer/default_brighness"
+            app:updatesContinuously="true"
+            app:showSeekBarValue="false"
+            app:iconSpaceReserved="false"/>
 
     </PreferenceCategory>
 

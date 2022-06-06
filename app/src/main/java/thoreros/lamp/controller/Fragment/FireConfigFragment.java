@@ -8,8 +8,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import thoreros.lamp.controller.R;
+import thoreros.libraries.preference.PreferenceFragment;
 
-public class FireConfigFragment extends ModeConfigFragment {
+public class FireConfigFragment extends PreferenceFragment {
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.fire_config, rootKey);

@@ -53,7 +53,7 @@ public class ColorPickerPreference extends DialogPreference {
             mShowPreview = true;
         }
 
-        this.setWidgetLayoutResource(R.layout.preference_widget);
+        this.setWidgetLayoutResource(R.layout.colorpicker_widget);
     }
 
 

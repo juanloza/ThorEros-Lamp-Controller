@@ -15,8 +15,9 @@
     </declare-styleable>
     <declare-styleable name="PalettePreference">
         <attr name="entryPreviewThumbnails" format="reference|string|integer" />
-    </declare-styleable>
-    <declare-styleable name="PreferenceTheme">
-        <attr name="PalettePreferenceStyle" format="reference" />
+        <attr name="showSummary" format="boolean" />
+        <attr name="paletteBorderColor" format="color|reference" />
+        <attr name="paletteBorderSize" format="dimension" />
+        <attr name="paletteHeight" format="dimension" />
     </declare-styleable>
 </resources>

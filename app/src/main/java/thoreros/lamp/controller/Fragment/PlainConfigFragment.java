@@ -8,10 +8,11 @@ import androidx.preference.Preference;
 import androidx.preference.SeekBarPreference;
 
 import thoreros.lamp.controller.R;
+import thoreros.libraries.preference.PreferenceFragment;
 import thoreros.libraries.preference.colorpicker.ColorPickerPreference;
 import thoreros.libraries.preference.colorpicker.ObservableColor;
 
-public class PlainConfigFragment extends ModeConfigFragment{
+public class PlainConfigFragment extends PreferenceFragment {
 //    SeekBarPreference brightness;
 //    ColorPickerPreference colorpicker;
 

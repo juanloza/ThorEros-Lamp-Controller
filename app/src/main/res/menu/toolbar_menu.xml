@@ -3,13 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/btn_settings"
-        android:icon="@drawable/ic_baseline_settings_24"
+        android:icon="@drawable/ic_settings_48"
         android:title="@string/settings"
         android:contentDescription="@string/send"
-        app:showAsAction="ifRoom|withText"/>
+        app:showAsAction="ifRoom"/>
+<!--        app:showAsAction="ifRoom|withText"/>-->
     <item
         android:id="@+id/btn_send"
-        android:icon="@drawable/ic_baseline_send_24"
+        android:icon="@drawable/ic_send_48"
         android:title="@string/send"
         android:contentDescription="@string/send"
         app:showAsAction="always"/>
