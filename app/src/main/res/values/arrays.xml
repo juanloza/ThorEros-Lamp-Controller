@@ -11,8 +11,9 @@
     </string-array>
 
     <string-array name="modo_entries">
-        <item>Fire</item>
-        <item>Plain color</item>
+        <item>Test</item>
+        <item>Color plano</item>
+        <item>Fuego</item>
         <item>Beating</item>
         <item>RGB Loop</item>
         <item>Strobe</item>
@@ -45,6 +46,7 @@
         <item>13</item>
         <item>14</item>
         <item>15</item>
+        <item>16</item>
     </string-array>
     <string-array name="palettes_entries">
         <item>Fuego</item>

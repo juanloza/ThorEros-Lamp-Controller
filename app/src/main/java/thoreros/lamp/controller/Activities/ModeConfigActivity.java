@@ -75,6 +75,13 @@ public class ModeConfigActivity extends AppCompatActivity implements SharedPrefe
         if(!port.equals("")){
             baseUrl +=":"+port;
         }
+        //TODO: sync config
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        //TODO: sync config
     }
 
     @Override
@@ -211,7 +218,7 @@ public class ModeConfigActivity extends AppCompatActivity implements SharedPrefe
         //Single param mode
         if(paramKey != null){
             Map<String, ?> allConfig = sharedPreferences.getAll();
-            params.put("name",paramKey);
+            params.put("param",paramKey);
             Object value = allConfig.get(paramKey);
             assert value != null;
             if(value.getClass() == Boolean.class){
@@ -229,15 +236,18 @@ public class ModeConfigActivity extends AppCompatActivity implements SharedPrefe
         String modo = sharedPreferences.getString("lamp_mode", "0");
         params.put("mode",modo);
         switch (modo){
-            case "0":
-                params.put("cooling", String.valueOf(sharedPreferences.getInt("fire_cooling", 0)));
-                params.put("sparking", String.valueOf(sharedPreferences.getInt("fire_sparking", 0)));
-                params.put("palette", sharedPreferences.getString("fire_palette", "0"));
+            case "0"://Test
                 break;
-            case "1":
+            case "1"://Color plano
                 params.put("color", String.valueOf(sharedPreferences.getInt("plain_color", 0)));
                 params.put("brightness", String.valueOf(sharedPreferences.getInt("plain_brightness", 255)));
                 params.put("numleds", String.valueOf(sharedPreferences.getInt("plain_num_leds", 4)));
+                break;
+            case "2"://Fuego
+                params.put("cooling", String.valueOf(sharedPreferences.getInt("fire_cooling", 0)));
+                params.put("sparking", String.valueOf(sharedPreferences.getInt("fire_sparking", 0)));
+                params.put("palette", sharedPreferences.getString("fire_palette", "0"));
+                params.put("brightness", String.valueOf(sharedPreferences.getInt("fire_brightness", 255)));
                 break;
         }
         return params;

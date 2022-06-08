@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import java.util.Objects;
@@ -13,7 +14,8 @@ import thoreros.libraries.preference.PreferenceFragment;
 
 public class MainConfigFragment extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
-        ListPreference listEffect;
+    ListPreference listEffect;
+
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.mode_config, rootKey);
@@ -35,11 +37,23 @@ public class MainConfigFragment extends PreferenceFragment
             }
             PreferenceFragment destFragment = null;
             switch (Integer.parseInt((String)newValue)){
-                case 0:
-                    destFragment = new FireConfigFragment();
-                    break;
-                case 1:
+                case 0: //Test
+                    Fragment fragment = getParentFragmentManager().findFragmentByTag("mode_config");
+                    assert fragment != null;
+                    getParentFragmentManager().beginTransaction()
+                            .remove(fragment)
+                            .setCustomAnimations(
+                                    R.anim.slide_in,  // enter
+                                    R.anim.slide_out,  // exit
+                                    R.anim.slide_in,   // popEnter
+                                    R.anim.slide_out  // popExit
+                            ).commit();
+                    return true;
+                case 1: //Color plano
                     destFragment = new PlainConfigFragment();
+                    break;
+                case 2: //Fuego
+                    destFragment = new FireConfigFragment();
                     break;
             }
             if(destFragment != null){
@@ -51,7 +65,7 @@ public class MainConfigFragment extends PreferenceFragment
                                 R.anim.slide_in,   // popEnter
                                 R.anim.slide_out  // popExit
                         )
-                        .replace(R.id.mode_config, destFragment)
+                        .replace(R.id.mode_config, destFragment,"mode_config")
                         .commit();
             }else{
                 Toast.makeText(this.getContext(), "Option not supported yet", Toast.LENGTH_SHORT).show();
