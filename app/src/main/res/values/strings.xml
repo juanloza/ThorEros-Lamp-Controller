@@ -12,15 +12,47 @@
     <string name="connection_fail">ERROR!!\nNo se ha podido establecer conexión</string>
     <string name="ping_ok">¡Se ha conectado correctamente!</string>
     <string name="ping_fails">ERROR: No se ha podido conectar a la lámpara</string>
+
     <string name="lamp_effect">Efecto</string>
     <string name="lamp_effect_summary">Efecto de iluminación</string>
-    <string name="fire_config">Fuego</string>
+
     <string name="plain_config">Color plano</string>
+    <string name="fire_config">Fuego</string>
+    <string name="comet_config">Cometas</string>
+    <string name="show_palette_config">Paleta</string>
+
+    <string name="enable">Encender</string>
     <string name="cooling">Enfriamiento</string>
     <string name="sparking">Nuevas chispas</string>
-    <string name="flame_color">Color</string>
-    <string name="flame_palette">Paleta de color</string>
+    <string name="color">Color</string>
+    <string name="palette">Paleta de color</string>
     <string name="brightness">Intensidad</string>
     <string name="plain_num_leds">Cantidad de leds iluminados</string>
-    <string name="enable">Encender</string>
+    <string name="reverse">Invertir</string>
+    <string name="random_color">Color aleatorio</string>
+    <string name="size">Tamaño</string>
+    <string name="random_decay">Decadencia aleatoria</string>
+    <string name="decay">Decadencia</string>
+    <string name="decay_probability">Probabilidad de decadencia</string>
+    <string name="new_comet_probability">Probabilidad nuevos cometas</string>
+    <string name="max_comets_total">Cometas totales máximos</string>
+    <string name="max_comets_strip">Máximo cometas por tira</string>
+    <string name="speed">Velocidad</string>
+
+    <string name="background_color">Color de fondo</string>
+    <string name="background_brightness">Intensidad del fondo</string>
+    <string name="new_stars_probability">Probabilidad nuevas estrellas</string>
+    <string name="fade">Desvanecimiento</string>
+    <string name="falling_stars">Descender estrellas</string>
+    <string name="faling_speed">Velocidad de descenso</string>
+    <string name="random_star_color">Color de las estrellas aleatorio</string>
+    <string name="star_color">Color de las estrellas</string>
+    <string name="star_palette">Paleta de color para las estrellas</string>
+    <string name="scale">Escala de la paleta</string>
+    <string name="step">Avance por frame</string>
+    <string name="stripOffset">Avance por tira</string>
+    <string name="gravity">Gravedad</string>
+    <string name="new_balls_probability">Probabilidad nuevas pelotas</string>
+    <string name="max_balls_total">Pelotas totales máximas</string>
+    <string name="max_balls_strip">Máximo pelotas por tira</string>
 </resources>

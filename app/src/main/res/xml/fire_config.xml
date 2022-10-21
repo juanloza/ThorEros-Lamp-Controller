@@ -12,6 +12,7 @@
             android:min="@integer/ubyte_min"
             android:max="@integer/ubyte_max"
             android:title="@string/cooling"
+            app:updatesContinuously="true"
             app:showSeekBarValue="true"
             app:iconSpaceReserved="false"
             />
@@ -21,16 +22,17 @@
             android:min="@integer/ubyte_min"
             android:max="@integer/ubyte_max"
             android:title="@string/sparking"
+            app:updatesContinuously="true"
             app:showSeekBarValue="true"
             app:iconSpaceReserved="false"/>
 
         <thoreros.libraries.preference.palette.PalettePreference
             app:key="fire_palette"
-            android:title="@string/flame_palette"
-            android:entries="@array/palettes_entries"
-            android:entryValues="@array/palettes_values"
+            android:title="@string/palette"
+            android:entries="@array/fire_palettes_entries"
+            android:entryValues="@array/fire_palettes_values"
             android:defaultValue="0"
-            app:entryPreviewThumbnails="@array/palettes_thumbs"
+            app:entryPreviewThumbnails="@array/fire_palettes_thumbs"
             app:showSummary="true"
             app:useSimpleSummaryProvider="true"
             app:iconSpaceReserved="false" />
@@ -42,7 +44,7 @@
             android:title="@string/brightness"
             android:defaultValue="@integer/default_brighness"
             app:updatesContinuously="true"
-            app:showSeekBarValue="false"
+            app:showSeekBarValue="true"
             app:iconSpaceReserved="false"/>
 
     </PreferenceCategory>

@@ -1,0 +1,111 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:key="CometConfig"
+        android:title="@string/comet_config"
+        app:iconSpaceReserved="false">
+
+        <thoreros.libraries.preference.colorpicker.ColorPickerPreference
+            android:title="@string/background_color"
+            app:iconSpaceReserved="false"
+            app:key="balls_bgcolor"
+            app:showAlpha="false"
+            app:showHex="true"
+            app:showPreview="true"
+            app:showValue="false"
+            app:valueMaxIfHidden="true" />
+
+        <SeekBarPreference
+            android:defaultValue="@integer/default_brighness"
+            android:key="balls_bgbrightness"
+            android:max="@integer/ubyte_max"
+            android:min="@integer/ubyte_min"
+            android:title="@string/background_brightness"
+            app:iconSpaceReserved="false"
+            app:showSeekBarValue="true"
+            app:updatesContinuously="true" />
+
+        <SwitchPreference
+            android:key="balls_random_color"
+            android:defaultValue="false"
+            android:title="@string/random_color"
+            app:iconSpaceReserved="false" />
+
+        <thoreros.libraries.preference.colorpicker.ColorPickerPreference
+            app:key="balls_color"
+            android:title="@string/color"
+            app:showValue="false"
+            app:valueMaxIfHidden="true"
+            app:showHex="true"
+            app:showAlpha="false"
+            app:showPreview="true"
+            app:iconSpaceReserved="false"
+            />
+
+        <thoreros.libraries.preference.palette.PalettePreference
+            app:key="balls_palette"
+            android:title="@string/palette"
+            android:entries="@array/comet_palettes_entries"
+            android:entryValues="@array/comet_palettes_values"
+            android:defaultValue="0"
+            app:entryPreviewThumbnails="@array/comet_palettes_thumbs"
+            app:showSummary="true"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false" />
+
+        <SeekBarPreference
+            android:key="comet_brightness"
+            android:min="@integer/ubyte_min"
+            android:max="@integer/ubyte_max"
+            android:title="@string/brightness"
+            android:defaultValue="@integer/default_brighness"
+            app:updatesContinuously="true"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false"/>
+            uint8_t maxTotalBalls;
+            uint8_t maxStripBalls;
+        <SeekBarPreference
+            android:key="balls_gravity"
+            android:min="@integer/comet_size_min"
+            android:max="@integer/ubyte_max"
+            android:defaultValue="@integer/gravity_defult"
+            android:title="@string/gravity"
+            app:updatesContinuously="true"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false"
+            />
+
+            <SeekBarPreference
+                android:key="balls_probability"
+                android:max="@integer/max_balls_probability"
+                android:min="@integer/ubyte_nonzero_min"
+                android:defaultValue="@integer/balls_new_probability_default"
+                android:title="@string/new_balls_probability"
+                app:iconSpaceReserved="false"
+                app:showSeekBarValue="true"
+                app:updatesContinuously="true" />
+
+        <SeekBarPreference
+            android:key="balls_max_total"
+            android:min="@integer/comet_min_total"
+            android:max="@integer/comet_max_total"
+            android:title="@string/max_balls_total"
+            android:defaultValue="@integer/total_balls_default"
+            app:updatesContinuously="true"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false"/>
+
+        <SeekBarPreference
+            android:key="balls_max_strip"
+            android:min="@integer/comet_min_strip"
+            android:max="@integer/comet_max_strip"
+            android:title="@string/max_balls_strip"
+            android:defaultValue="@integer/strip_balls_default"
+            app:updatesContinuously="true"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

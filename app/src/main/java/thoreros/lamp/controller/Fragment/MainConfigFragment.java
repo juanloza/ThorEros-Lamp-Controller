@@ -11,6 +11,7 @@ import java.util.Objects;
 
 import thoreros.lamp.controller.R;
 import thoreros.libraries.preference.PreferenceFragment;
+import thoreros.libraries.preference.palette.PalettePreference;
 
 public class MainConfigFragment extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -36,24 +37,39 @@ public class MainConfigFragment extends PreferenceFragment
                 return true;
             }
             PreferenceFragment destFragment = null;
-            switch (Integer.parseInt((String)newValue)){
-                case 0: //Test
+            String[] textModes = getResources().getStringArray(R.array.modo_entries);
+            String textMode = textModes[Integer.parseInt((String)newValue)];
+            switch (textMode){
+                case "Test":
                     Fragment fragment = getParentFragmentManager().findFragmentByTag("mode_config");
-                    assert fragment != null;
-                    getParentFragmentManager().beginTransaction()
-                            .remove(fragment)
-                            .setCustomAnimations(
-                                    R.anim.slide_in,  // enter
-                                    R.anim.slide_out,  // exit
-                                    R.anim.slide_in,   // popEnter
-                                    R.anim.slide_out  // popExit
-                            ).commit();
+                    //No config, so remove config fragment if exists
+                    if(fragment != null){
+                        getParentFragmentManager().beginTransaction()
+                                .remove(fragment)
+                                .setCustomAnimations(
+                                        R.anim.slide_in,  // enter
+                                        R.anim.slide_out,  // exit
+                                        R.anim.slide_in,   // popEnter
+                                        R.anim.slide_out  // popExit
+                                ).commit();
+                    }
                     return true;
-                case 1: //Color plano
+                case "Color plano": //Color plano
                     destFragment = new PlainConfigFragment();
                     break;
-                case 2: //Fuego
+                case "Paleta de color":
+                    destFragment = new ShowPaletteConfigFragment();
+                    break;
+                case "Fuego":
                     destFragment = new FireConfigFragment();
+                    break;
+                case "Cometa":
+                    destFragment = new CometConfigFragment();
+                    break;
+                case "Estrellas":
+                    destFragment = new StarSparkleConfigFragment();
+                    break;
+                case "Pelotas":
                     break;
             }
             if(destFragment != null){

@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="default_brighness" type="integer">255</item>
-    <item name="default_plain_num_leds" type="integer">4</item>
-    <item name="ubyte_min" type="integer">0</item>
-    <item name="ubyte_max" type="integer">255</item>
-    <item name="numleds_min" type="integer">0</item>
-    <item name="numleds_max" type="integer">5</item>
+    <integer name="default_brighness">128</integer>
+    <integer name="default_plain_num_leds">3</integer>
+    <integer name="ubyte_nonzero_min">1</integer>
+    <integer name="byte_negative_max">-255</integer>
+    <integer name="ubyte_min">0</integer>
+    <integer name="ubyte_center">127</integer>
+    <integer name="ubyte_max">255</integer>
+    <integer name="numleds_min">0</integer>
+    <integer name="numleds_max">7</integer>
+    <integer name="comet_min_decay_probability">1</integer>
+    <integer name="comet_size_min">1</integer>
+    <integer name="comet_size_max">25</integer>
+    <integer name="max_comet_probability">20</integer>
+    <integer name="comet_new_probability_default">5</integer>
+    <integer name="comet_min_total">1</integer>
+    <integer name="comet_min_strip">1</integer>
+    <integer name="comet_max_total">30</integer>
+    <integer name="comet_max_strip">5</integer>
+    <integer name="max_star_probability">50</integer>
+    <integer name="stripOffsetDefault">-20</integer>
+    <integer name="palette_scale_max">1535</integer>
+    <integer name="gravity_defult">98</integer>
+    <integer name="total_balls_default">20</integer>
+    <integer name="strip_balls_default">3</integer>
+    <integer name="max_balls_probability">20</integer>
+    <integer name="balls_new_probability_default">5</integer>
 </resources>

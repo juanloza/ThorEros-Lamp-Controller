@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
+import androidx.preference.SwitchPreference;
 
 import thoreros.libraries.preference.colorpicker.ColorPickerPreference;
 import thoreros.libraries.preference.colorpicker.ColorPickerPreferenceFragment;

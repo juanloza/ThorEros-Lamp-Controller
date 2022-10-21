@@ -1,0 +1,141 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:key="CometConfig"
+        android:title="@string/comet_config"
+        app:iconSpaceReserved="false">
+
+        <thoreros.libraries.preference.colorpicker.ColorPickerPreference
+            android:title="@string/background_color"
+            app:iconSpaceReserved="false"
+            app:key="comet_bgcolor"
+            app:showAlpha="false"
+            app:showHex="true"
+            app:showPreview="true"
+            app:showValue="false"
+            app:valueMaxIfHidden="true" />
+
+        <SeekBarPreference
+            android:defaultValue="@integer/default_brighness"
+            android:key="comet_bgbrightness"
+            android:max="@integer/ubyte_max"
+            android:min="@integer/ubyte_min"
+            android:title="@string/background_brightness"
+            app:iconSpaceReserved="false"
+            app:showSeekBarValue="true"
+            app:updatesContinuously="true" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="comet_random_color"
+            android:title="@string/random_color"
+            app:iconSpaceReserved="false" />
+
+        <thoreros.libraries.preference.colorpicker.ColorPickerPreference
+            android:title="@string/color"
+            app:iconSpaceReserved="false"
+            app:key="comet_color"
+            app:showAlpha="false"
+            app:showHex="true"
+            app:showPreview="true"
+            app:showValue="false"
+            app:valueMaxIfHidden="true" />
+
+        <thoreros.libraries.preference.palette.PalettePreference
+            android:defaultValue="0"
+            android:entries="@array/comet_palettes_entries"
+            android:entryValues="@array/comet_palettes_values"
+            android:title="@string/palette"
+            app:entryPreviewThumbnails="@array/comet_palettes_thumbs"
+            app:iconSpaceReserved="false"
+            app:key="comet_palette"
+            app:showSummary="true"
+            app:useSimpleSummaryProvider="true" />
+
+        <SeekBarPreference
+            android:defaultValue="@integer/default_brighness"
+            android:key="comet_brightness"
+            android:max="@integer/ubyte_max"
+            android:min="@integer/ubyte_min"
+            android:title="@string/brightness"
+            app:iconSpaceReserved="false"
+            app:showSeekBarValue="true"
+            app:updatesContinuously="true" />
+
+        <SeekBarPreference
+            android:key="comet_size"
+            android:max="@integer/comet_size_max"
+            android:min="@integer/comet_size_min"
+            android:title="@string/size"
+            app:iconSpaceReserved="false"
+            app:showSeekBarValue="true"
+            app:updatesContinuously="true" />
+
+        <SeekBarPreference
+            android:defaultValue="@integer/comet_new_probability_default"
+            android:key="comet_new_random"
+            android:max="@integer/max_comet_probability"
+            android:min="@integer/comet_size_min"
+            android:title="@string/new_comet_probability"
+            app:iconSpaceReserved="false"
+            app:showSeekBarValue="true"
+            app:updatesContinuously="true" />
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="comet_random_decay"
+            android:title="@string/random_decay"
+            app:iconSpaceReserved="false"
+            app:showSeekBarValue="true"
+            app:updatesContinuously="true" />
+
+        <SeekBarPreference
+            android:key="comet_decay_probability"
+            android:max="@integer/ubyte_max"
+            android:min="@integer/comet_min_decay_probability"
+            android:title="@string/decay_probability"
+            app:iconSpaceReserved="false"
+            app:showSeekBarValue="true"
+            app:updatesContinuously="true" />
+
+        <SeekBarPreference
+            android:key="comet_decay"
+            android:max="@integer/ubyte_max"
+            android:min="@integer/ubyte_nonzero_min"
+            android:title="@string/decay"
+            app:iconSpaceReserved="false"
+            app:showSeekBarValue="true"
+            app:updatesContinuously="true" />
+
+        <SeekBarPreference
+            android:key="comet_max_total"
+            android:max="@integer/comet_max_total"
+            android:min="@integer/comet_min_total"
+            android:title="@string/max_comets_total"
+            app:iconSpaceReserved="false"
+            app:showSeekBarValue="true"
+            app:updatesContinuously="true" />
+
+        <SeekBarPreference
+            android:key="comet_max_strip"
+            android:max="@integer/comet_max_strip"
+            android:min="@integer/comet_min_strip"
+            android:title="@string/max_comets_strip"
+            app:iconSpaceReserved="false"
+            app:showSeekBarValue="true"
+            app:updatesContinuously="true" />
+
+        <SeekBarPreference
+            android:key="comet_speed"
+            android:max="@integer/ubyte_max"
+            android:min="@integer/ubyte_nonzero_min"
+            android:defaultValue="@integer/ubyte_max"
+            android:title="@string/speed"
+            app:iconSpaceReserved="false"
+            app:showSeekBarValue="true"
+            app:updatesContinuously="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

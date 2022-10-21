@@ -88,27 +88,34 @@
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/ic_test_svg.xml" value="0.299" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/paleta_fuego.xml" value="0.2" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/paleta_llama_azul.xml" value="0.178" />
-        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/paleta_llama_naranja.xml" value="0.178" />
-        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/paleta_llama_test.xml" value="0.178" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/paleta_llama_naranja.xml" value="0.1" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/paleta_llama_rosa.xml" value="0.1" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/paleta_llama_test.xml" value="0.33" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/paleta_llama_verde.xml" value="0.178" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/paleta_llama_verde_amarilla.xml" value="0.157" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/paleta_llama_verde_azul.xml" value="0.178" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/paleta_llama_violeta.xml" value="0.178" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/paleta_rainbow.xml" value="0.1395" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/paleta_test2.xml" value="0.12" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/test_gradient.xml" value="0.25" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/drawable/test_gradient2.xml" value="0.173" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/layout/main_activity.xml" value="0.35052083333333334" />
-        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/layout/mode_config_activity.xml" value="0.3839080459770115" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/layout/mode_config_activity.xml" value="0.25" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/layout/preference_base.xml" value="0.17395833333333333" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/layout/settings_activity.xml" value="0.33" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/layout/toolbar.xml" value="0.33" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/menu/toolbar_menu.xml" value="0.25" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.12" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.12" />
-        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/fire_config.xml" value="0.25" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/balls_config.xml" value="0.25" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/comet_config.xml" value="0.23052536231884058" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/fire_config.xml" value="0.15925925925925927" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/main_config.xml" value="0.1" />
-        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/mode_config.xml" value="0.33" />
-        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/plain_config.xml" value="0.33" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/mode_config.xml" value="0.21" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/plain_config.xml" value="0.16104868913857678" />
         <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/server_preferences.xml" value="0.35052083333333334" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/show_palette_config.xml" value="0.2" />
+        <entry key="..\:/Users/Juan/StudioProjects/ThorEros-Lamp-Controller/app/src/main/res/xml/star_sparkle_config.xml" value="0.35052083333333334" />
       </map>
     </option>
   </component>

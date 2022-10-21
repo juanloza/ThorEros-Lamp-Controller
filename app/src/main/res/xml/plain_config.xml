@@ -8,12 +8,11 @@
 
         <thoreros.libraries.preference.colorpicker.ColorPickerPreference
             app:key="plain_color"
-            android:title="Color"
+            android:title="@string/color"
             app:showValue="false"
             app:valueMaxIfHidden="true"
             app:showHex="true"
             app:showAlpha="false"
-            app:noneSelectedSummaryText="No tienes color chato"
             app:showPreview="true"
             app:iconSpaceReserved="false"
             />
@@ -25,7 +24,7 @@
             android:title="@string/brightness"
             android:defaultValue="@integer/default_brighness"
             app:updatesContinuously="true"
-            app:showSeekBarValue="false"
+            app:showSeekBarValue="true"
             app:iconSpaceReserved="false"/>
 
         <SeekBarPreference
@@ -34,7 +33,8 @@
             android:max="@integer/numleds_max"
             android:title="@string/plain_num_leds"
             android:defaultValue="@integer/default_plain_num_leds"
-            app:showSeekBarValue="false"
+            app:updatesContinuously="true"
+            app:showSeekBarValue="true"
             app:iconSpaceReserved="false"/>
     </PreferenceCategory>
 </PreferenceScreen>

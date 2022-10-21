@@ -1,0 +1,72 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="ShowPaletteColorConfig"
+        android:title="@string/show_palette_config"
+        app:iconSpaceReserved="false">
+
+        <thoreros.libraries.preference.palette.PalettePreference
+            app:key="palette_palette"
+            android:title="@string/palette"
+            android:entries="@array/palette_palettes_entries"
+            android:entryValues="@array/palette_palettes_values"
+            android:defaultValue="0"
+            app:entryPreviewThumbnails="@array/palette_palettes_thumbs"
+            app:showSummary="true"
+            app:useSimpleSummaryProvider="true"
+            app:iconSpaceReserved="false" />
+
+        <SwitchPreference
+            android:key="palette_reverse"
+            android:defaultValue="false"
+            android:title="@string/reverse"
+            app:iconSpaceReserved="false" />
+
+        <SeekBarPreference
+            android:key="palette_brightness"
+            android:min="@integer/ubyte_min"
+            android:max="@integer/ubyte_max"
+            android:title="@string/brightness"
+            android:defaultValue="@integer/default_brighness"
+            app:updatesContinuously="true"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false"/>
+        <SeekBarPreference
+            android:key="palette_scale"
+            android:min="@integer/ubyte_nonzero_min"
+            android:max="@integer/palette_scale_max"
+            android:title="@string/scale"
+            android:defaultValue="@integer/ubyte_max"
+            app:updatesContinuously="true"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false"/>
+        <SeekBarPreference
+            android:key="palette_speed"
+            android:min="@integer/ubyte_min"
+            android:max="@integer/ubyte_max"
+            android:title="@string/speed"
+            android:defaultValue="@integer/ubyte_center"
+            app:updatesContinuously="true"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false"/>
+        <SeekBarPreference
+            android:key="palette_step"
+            android:min="@integer/ubyte_min"
+            android:max="@integer/ubyte_max"
+            android:title="@string/step"
+            android:defaultValue="@integer/ubyte_nonzero_min"
+            app:updatesContinuously="true"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false"/>
+        <SeekBarPreference
+            android:key="palette_stripOffset"
+            android:min="@integer/byte_negative_max"
+            android:max="@integer/ubyte_max"
+            android:title="@string/stripOffset"
+            android:defaultValue="@integer/stripOffsetDefault"
+            app:updatesContinuously="true"
+            app:showSeekBarValue="true"
+            app:iconSpaceReserved="false"/>
+    </PreferenceCategory>
+</PreferenceScreen>

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.ListPreference;
 import androidx.preference.PreferenceManager;
 
 import android.content.Intent;
@@ -23,6 +24,7 @@ import com.android.volley.toolbox.Volley;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -34,12 +36,14 @@ import thoreros.lamp.controller.databinding.ModeConfigActivityBinding;
 public class ModeConfigActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     protected ModeConfigActivityBinding binding;
+    protected SharedPreferences sharedPreferences;
+    protected ProgressBar progressBar;
     protected RequestQueue queue;
+    protected Boolean requestRunning;
+    protected StringRequest queuedRequest;
     protected String baseUrl;
-    SharedPreferences sharedPreferences;
-    ProgressBar progressBar;
-    Boolean requestRunning;
-    StringRequest queuedRequest;
+    protected Map<String, String> paramsMapping =  new HashMap<>();
+
     protected enum RequestType {
         CHANGE_MODE_CONFIG,
         CHANGE_SINGLE_PARAM
@@ -68,6 +72,70 @@ public class ModeConfigActivity extends AppCompatActivity implements SharedPrefe
 
         binding.btnSend2.setOnClickListener(view -> sendConfigRequest(RequestType.CHANGE_MODE_CONFIG,null));
 
+        this.getServerConfig();
+
+        //Only need to put params who need to single update on the fly
+        paramsMapping.put("lamp_enabled", "enabled");
+        paramsMapping.put("lamp_mode", "mode");
+
+        paramsMapping.put("plain_color", "color");
+        paramsMapping.put("plain_brightness", "brightness");
+        paramsMapping.put("plain_num_leds", "numleds");
+
+        paramsMapping.put("palette_palette", "palette");
+        paramsMapping.put("palette_reverse", "reverse");
+        paramsMapping.put("palette_brightness", "brightness");
+        paramsMapping.put("palette_scale", "scale");
+        paramsMapping.put("palette_speed", "speed");
+        paramsMapping.put("palette_step", "step");
+        paramsMapping.put("palette_stripOffset", "stripoffset");
+
+        paramsMapping.put("fire_cooling", "cooling");
+        paramsMapping.put("fire_sparking", "sparking");
+        paramsMapping.put("fire_palette", "palette");
+        paramsMapping.put("fire_brightness", "brightness");
+
+        paramsMapping.put("comet_bgcolor", "bgcolor");
+        paramsMapping.put("comet_bgbrightness", "bgbrightness");
+        paramsMapping.put("comet_color", "color");
+        paramsMapping.put("comet_palette", "palette");
+        paramsMapping.put("comet_brightness", "brightness");
+        paramsMapping.put("comet_size", "size");
+        paramsMapping.put("comet_new_random", "newprobability");
+        paramsMapping.put("comet_random_decay", "randomDecay");
+        paramsMapping.put("comet_decay_probability", "decayProbability");
+        paramsMapping.put("comet_decay", "decay");
+        paramsMapping.put("comet_max_total", "maxtotal");
+        paramsMapping.put("comet_max_strip", "maxstrip");
+        paramsMapping.put("comet_speed", "speed");
+
+        paramsMapping.put("star_bgcolor", "bgcolor");
+        paramsMapping.put("star_bgbrightness", "bgbrightness");
+        paramsMapping.put("star_color", "color");
+        paramsMapping.put("star_palette", "palette");
+        paramsMapping.put("star_brightness", "brightness");
+        paramsMapping.put("star_probability", "starprobability");
+        paramsMapping.put("star_fade_amount", "fadeStar");
+        paramsMapping.put("star_falling", "fallstars");
+
+        paramsMapping.put("balls_bgcolor", "bgcolor");
+        paramsMapping.put("balls_bgbrightness", "bgbrightness");
+        paramsMapping.put("balls_color", "color");
+        paramsMapping.put("balls_palette", "palette");
+        paramsMapping.put("balls_brightness", "brightness");
+        paramsMapping.put("balls_gravity", "gravity");
+        paramsMapping.put("balls_probability", "newprobability");
+        paramsMapping.put("balls_max_total", "maxtotal");
+        paramsMapping.put("balls_max_strip", "maxstrip");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        this.getServerConfig();
+    }
+
+    private void getServerConfig() {
         String server = sharedPreferences.getString("host_name","");
         String port = sharedPreferences.getString("port","");
         baseUrl = "http://"+server;
@@ -75,13 +143,6 @@ public class ModeConfigActivity extends AppCompatActivity implements SharedPrefe
         if(!port.equals("")){
             baseUrl +=":"+port;
         }
-        //TODO: sync config
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        //TODO: sync config
     }
 
     @Override
@@ -106,7 +167,7 @@ public class ModeConfigActivity extends AppCompatActivity implements SharedPrefe
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if(Objects.equals(key, "lamp_enabled")) {
+        if(paramsMapping.containsKey(key)){
             sendConfigRequest(RequestType.CHANGE_SINGLE_PARAM, key);
         }
     }
@@ -148,24 +209,6 @@ public class ModeConfigActivity extends AppCompatActivity implements SharedPrefe
 
     protected void sendConfigRequest(RequestType requestType, @Nullable String paramKey){
         progressBar.setVisibility(View.VISIBLE);
-//        int mode = Integer.parseInt(sharedPreferences.getString("lamp_mode", "0"));
-//        String[] modes = getResources().getStringArray(R.array.modo_entries);
-//        String prefTxt = "Modo: "+modes[mode]+"\n";
-//        switch (mode) {
-//            case 0:
-//                prefTxt += "Cooling: " + sharedPreferences.getInt("fire_cooling", 0) + "\n";
-//                prefTxt += "Sparking: " + sharedPreferences.getInt("fire_sparking", 0) + "\n";
-//                String[] palettes = getResources().getStringArray(R.array.palettes_entries);
-//                int palette = Integer.parseInt(sharedPreferences.getString("fire_palette", "0"));
-//                prefTxt += "Paleta de color: " + palettes[palette] + "\n";
-//                break;
-//            case 1:
-//                int color = sharedPreferences.getInt("plain_color", 0);
-//                prefTxt += "Color: #" + String.format("%06x", color & 0x00ffffff) + "\n";
-//                prefTxt += "Brightness: #" + sharedPreferences.getInt("plain_brighness", 255) + "\n";
-//                prefTxt += "Leds encendidos: #" + sharedPreferences.getInt("plain_num_leds", 4) + "\n";
-//                break;
-//        }
 
         if(queue==null){
             queue = Volley.newRequestQueue(this);
@@ -174,7 +217,7 @@ public class ModeConfigActivity extends AppCompatActivity implements SharedPrefe
         String requestUrl = getRequestUrl(requestType,requestMode, paramKey);
         StringRequest configRequest = new StringRequest(requestMode, requestUrl, response -> {
             if(response.equals("OK")){
-                Toast.makeText(this,"Datos enviados", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this,"Datos enviados", Toast.LENGTH_SHORT).show();
                 progressBar.setVisibility(View.INVISIBLE);
                 requestRunning=false;
                 runQueuedRequest();
@@ -218,7 +261,10 @@ public class ModeConfigActivity extends AppCompatActivity implements SharedPrefe
         //Single param mode
         if(paramKey != null){
             Map<String, ?> allConfig = sharedPreferences.getAll();
-            params.put("param",paramKey);
+            if(!paramsMapping.containsKey(paramKey)){
+                return params;
+            }
+            params.put("param",paramsMapping.get(paramKey));
             Object value = allConfig.get(paramKey);
             assert value != null;
             if(value.getClass() == Boolean.class){
@@ -234,20 +280,91 @@ public class ModeConfigActivity extends AppCompatActivity implements SharedPrefe
         boolean enabled = sharedPreferences.getBoolean("lamp_enabled",false);
         params.put("enabled",enabled ? "1":"0");
         String modo = sharedPreferences.getString("lamp_mode", "0");
+        String[] textModes = getResources().getStringArray(R.array.modo_entries);
+        String textMode = textModes[Integer.parseInt(modo)];
         params.put("mode",modo);
-        switch (modo){
-            case "0"://Test
+        switch (textMode){
+            case "Test":
                 break;
-            case "1"://Color plano
+            case "Color plano":
                 params.put("color", String.valueOf(sharedPreferences.getInt("plain_color", 0)));
                 params.put("brightness", String.valueOf(sharedPreferences.getInt("plain_brightness", 255)));
                 params.put("numleds", String.valueOf(sharedPreferences.getInt("plain_num_leds", 4)));
                 break;
-            case "2"://Fuego
+            case "Paleta de color":
+                params.put("palette", sharedPreferences.getString("palette_palette", "0"));
+                boolean reverse = sharedPreferences.getBoolean("palette_reverse",false);
+                params.put("reverse",reverse ? "1":"0");
+                params.put("brightness", String.valueOf(sharedPreferences.getInt("palette_brightness", 255)));
+                params.put("scale", String.valueOf(sharedPreferences.getInt("palette_scale", 255)));
+                params.put("speed", String.valueOf(sharedPreferences.getInt("palette_speed", 127)));
+                params.put("step", String.valueOf(sharedPreferences.getInt("palette_step", 1)));
+                params.put("stripoffset", String.valueOf(sharedPreferences.getInt("palette_stripOffset", -20)));
+                break;
+            case "Fuego":
                 params.put("cooling", String.valueOf(sharedPreferences.getInt("fire_cooling", 0)));
                 params.put("sparking", String.valueOf(sharedPreferences.getInt("fire_sparking", 0)));
                 params.put("palette", sharedPreferences.getString("fire_palette", "0"));
                 params.put("brightness", String.valueOf(sharedPreferences.getInt("fire_brightness", 255)));
+                break;
+            case "Cometa"://Cometa
+                params.put("bgcolor", String.valueOf(sharedPreferences.getInt("comet_bgcolor", 0)));
+                params.put("bgbrightness", String.valueOf(sharedPreferences.getInt("comet_bgbrightness", 255)));
+                boolean cometRandomColor = sharedPreferences.getBoolean("comet_random_color", false);
+                if(cometRandomColor){
+                    params.put("color", String.valueOf(0xff000000)); //Color when random is black
+                    params.put("palette", sharedPreferences.getString("comet_palette", "0"));
+                }else{
+                    params.put("color", String.valueOf(sharedPreferences.getInt("comet_color", 0)));
+                }
+                params.put("brightness", String.valueOf(sharedPreferences.getInt("comet_brightness", 255)));
+                params.put("size", String.valueOf(sharedPreferences.getInt("comet_size", 5)));
+                params.put("newprobability", String.valueOf(sharedPreferences.getInt("comet_new_random", 5)));
+                boolean randomDecay = sharedPreferences.getBoolean("comet_random_decay",false);
+                params.put("randomdecay",randomDecay ? "1":"0");
+                if(randomDecay){
+                    params.put("decayprobability", String.valueOf(sharedPreferences.getInt("comet_decay_probability", 128)));
+                }
+                params.put("decay", String.valueOf(sharedPreferences.getInt("comet_decay", 64)));
+                params.put("maxtotal", String.valueOf(sharedPreferences.getInt("comet_max_total", 20)));
+                params.put("maxstrip", String.valueOf(sharedPreferences.getInt("comet_max_strip", 2)));
+                params.put("speed", String.valueOf(sharedPreferences.getInt("comet_speed", 60)));
+                break;
+            case "Estrellas":
+                params.put("bgcolor", String.valueOf(sharedPreferences.getInt("star_bgcolor", 0)));
+                params.put("bgbrightness", String.valueOf(sharedPreferences.getInt("star_bgbrightness", 255)));
+                boolean randomStarColor = sharedPreferences.getBoolean("star_random_color", false);
+                if(randomStarColor){
+                    params.put("color", String.valueOf(0xff000000)); //Color when random is black
+                    params.put("palette", sharedPreferences.getString("star_palette", "0"));
+                }else{
+                    params.put("color", String.valueOf(sharedPreferences.getInt("star_color", 0)));
+                }
+                params.put("brightness", String.valueOf(sharedPreferences.getInt("star_brightness", 255)));
+
+                params.put("starprobability", String.valueOf(sharedPreferences.getInt("star_probability", 15)));
+                params.put("fadeStar", String.valueOf(sharedPreferences.getInt("star_fade_amount", 16)));
+                boolean fallStars = sharedPreferences.getBoolean("star_falling",false);
+                params.put("fallstars",fallStars ? "1":"0");
+                if(fallStars){
+                    params.put("speed", String.valueOf(sharedPreferences.getInt("star_falling_speed", 32)));
+                }
+                break;
+            case "Pelotas":
+                params.put("bgcolor", String.valueOf(sharedPreferences.getInt("balls_bgcolor", 0)));
+                params.put("bgbrightness", String.valueOf(sharedPreferences.getInt("balls_bgbrightness", 255)));
+                boolean ballsRandomColor = sharedPreferences.getBoolean("balls_random_color", false);
+                if(ballsRandomColor){
+                    params.put("color", String.valueOf(0xff000000)); //Color when random is black
+                    params.put("palette", sharedPreferences.getString("balls_palette", "0"));
+                }else{
+                    params.put("color", String.valueOf(sharedPreferences.getInt("balls_color", 0)));
+                }
+                params.put("brightness", String.valueOf(sharedPreferences.getInt("balls_brightness", 255)));
+                params.put("gravity", String.valueOf(sharedPreferences.getInt("balls_gravity", 255)));
+                params.put("newprobability", String.valueOf(sharedPreferences.getInt("balls_probability", 5)));
+                params.put("maxtotal", String.valueOf(sharedPreferences.getInt("balls_max_total", 255)));
+                params.put("maxstrip", String.valueOf(sharedPreferences.getInt("balls_max_strip", 255)));
                 break;
         }
         return params;
