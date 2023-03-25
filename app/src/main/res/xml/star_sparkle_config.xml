@@ -16,15 +16,15 @@
             app:showValue="false"
             app:valueMaxIfHidden="true" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:defaultValue="@integer/default_brighness"
             android:key="star_bgbrightness"
             android:max="@integer/ubyte_max"
-            android:min="@integer/ubyte_min"
+            app:min="@integer/ubyte_min"
             android:title="@string/background_brightness"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true" />
+            app:updatesContinuously="false" />
 
         <SwitchPreference
             android:defaultValue="false"
@@ -53,33 +53,33 @@
             app:showSummary="true"
             app:useSimpleSummaryProvider="true" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:defaultValue="@integer/default_brighness"
             android:key="star_brightness"
             android:max="@integer/ubyte_max"
-            android:min="@integer/ubyte_min"
+            app:min="@integer/ubyte_min"
             android:title="@string/brightness"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true" />
+            app:updatesContinuously="false" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:key="star_probability"
-            android:max="@integer/ubyte_max"
-            android:min="@integer/ubyte_nonzero_min"
+            android:max="@integer/max_star_probability"
+            app:min="@integer/ubyte_nonzero_min"
             android:title="@string/new_stars_probability"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true" />
+            app:updatesContinuously="false" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:key="star_fade_amount"
             android:max="@integer/ubyte_max"
-            android:min="@integer/ubyte_nonzero_min"
+            app:min="@integer/ubyte_nonzero_min"
             android:title="@string/fade"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true" />
+            app:updatesContinuously="false" />
 
         <SwitchPreference
             android:defaultValue="false"
@@ -87,14 +87,14 @@
             android:title="@string/falling_stars"
             app:iconSpaceReserved="false" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:key="star_falling_speed"
-            android:max="@integer/max_star_probability"
-            android:min="@integer/ubyte_nonzero_min"
+            android:max="@integer/ubyte_max"
+            app:min="@integer/ubyte_min"
             android:title="@string/faling_speed"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true"
+            app:updatesContinuously="false"
             app:dependency="star_falling"/>
 
 

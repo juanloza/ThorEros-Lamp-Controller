@@ -2,8 +2,8 @@
 <resources>
     <integer name="default_brighness">128</integer>
     <integer name="default_plain_num_leds">3</integer>
-    <integer name="ubyte_nonzero_min">1</integer>
     <integer name="byte_negative_max">-255</integer>
+    <integer name="ubyte_nonzero_min">1</integer>
     <integer name="ubyte_min">0</integer>
     <integer name="ubyte_center">127</integer>
     <integer name="ubyte_max">255</integer>

@@ -16,15 +16,15 @@
             app:showValue="false"
             app:valueMaxIfHidden="true" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:defaultValue="@integer/default_brighness"
             android:key="balls_bgbrightness"
             android:max="@integer/ubyte_max"
-            android:min="@integer/ubyte_min"
+            app:min="@integer/ubyte_min"
             android:title="@string/background_brightness"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true" />
+            app:updatesContinuously="false" />
 
         <SwitchPreference
             android:key="balls_random_color"
@@ -54,55 +54,55 @@
             app:useSimpleSummaryProvider="true"
             app:iconSpaceReserved="false" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:key="comet_brightness"
-            android:min="@integer/ubyte_min"
+            app:min="@integer/ubyte_min"
             android:max="@integer/ubyte_max"
             android:title="@string/brightness"
             android:defaultValue="@integer/default_brighness"
-            app:updatesContinuously="true"
+            app:updatesContinuously="false"
             app:showSeekBarValue="true"
             app:iconSpaceReserved="false"/>
             uint8_t maxTotalBalls;
             uint8_t maxStripBalls;
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:key="balls_gravity"
-            android:min="@integer/comet_size_min"
+            app:min="@integer/comet_size_min"
             android:max="@integer/ubyte_max"
             android:defaultValue="@integer/gravity_defult"
             android:title="@string/gravity"
-            app:updatesContinuously="true"
+            app:updatesContinuously="false"
             app:showSeekBarValue="true"
             app:iconSpaceReserved="false"
             />
 
-            <SeekBarPreference
+            <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
                 android:key="balls_probability"
                 android:max="@integer/max_balls_probability"
-                android:min="@integer/ubyte_nonzero_min"
+                app:min="@integer/ubyte_nonzero_min"
                 android:defaultValue="@integer/balls_new_probability_default"
                 android:title="@string/new_balls_probability"
                 app:iconSpaceReserved="false"
                 app:showSeekBarValue="true"
-                app:updatesContinuously="true" />
+                app:updatesContinuously="false" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:key="balls_max_total"
-            android:min="@integer/comet_min_total"
+            app:min="@integer/comet_min_total"
             android:max="@integer/comet_max_total"
             android:title="@string/max_balls_total"
             android:defaultValue="@integer/total_balls_default"
-            app:updatesContinuously="true"
+            app:updatesContinuously="false"
             app:showSeekBarValue="true"
             app:iconSpaceReserved="false"/>
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:key="balls_max_strip"
-            android:min="@integer/comet_min_strip"
+            app:min="@integer/comet_min_strip"
             android:max="@integer/comet_max_strip"
             android:title="@string/max_balls_strip"
             android:defaultValue="@integer/strip_balls_default"
-            app:updatesContinuously="true"
+            app:updatesContinuously="false"
             app:showSeekBarValue="true"
             app:iconSpaceReserved="false"/>
 

@@ -16,15 +16,15 @@
             app:showValue="false"
             app:valueMaxIfHidden="true" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:defaultValue="@integer/default_brighness"
             android:key="comet_bgbrightness"
             android:max="@integer/ubyte_max"
-            android:min="@integer/ubyte_min"
+            app:min="@integer/ubyte_min"
             android:title="@string/background_brightness"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true" />
+            app:updatesContinuously="false" />
 
         <SwitchPreference
             android:defaultValue="false"
@@ -53,34 +53,34 @@
             app:showSummary="true"
             app:useSimpleSummaryProvider="true" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:defaultValue="@integer/default_brighness"
             android:key="comet_brightness"
             android:max="@integer/ubyte_max"
-            android:min="@integer/ubyte_min"
+            app:min="@integer/ubyte_min"
             android:title="@string/brightness"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true" />
+            app:updatesContinuously="false" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:key="comet_size"
             android:max="@integer/comet_size_max"
-            android:min="@integer/comet_size_min"
+            app:min="@integer/comet_size_min"
             android:title="@string/size"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true" />
+            app:updatesContinuously="false" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:defaultValue="@integer/comet_new_probability_default"
             android:key="comet_new_random"
             android:max="@integer/max_comet_probability"
-            android:min="@integer/comet_size_min"
+            app:min="@integer/comet_size_min"
             android:title="@string/new_comet_probability"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true" />
+            app:updatesContinuously="false" />
 
         <SwitchPreference
             android:defaultValue="false"
@@ -88,53 +88,53 @@
             android:title="@string/random_decay"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true" />
+            app:updatesContinuously="false" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:key="comet_decay_probability"
             android:max="@integer/ubyte_max"
-            android:min="@integer/comet_min_decay_probability"
+            app:min="@integer/comet_min_decay_probability"
             android:title="@string/decay_probability"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true" />
+            app:updatesContinuously="false" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:key="comet_decay"
             android:max="@integer/ubyte_max"
-            android:min="@integer/ubyte_nonzero_min"
+            app:min="@integer/ubyte_nonzero_min"
             android:title="@string/decay"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true" />
+            app:updatesContinuously="false" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:key="comet_max_total"
             android:max="@integer/comet_max_total"
-            android:min="@integer/comet_min_total"
+            app:min="@integer/comet_min_total"
             android:title="@string/max_comets_total"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true" />
+            app:updatesContinuously="false" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:key="comet_max_strip"
             android:max="@integer/comet_max_strip"
-            android:min="@integer/comet_min_strip"
+            app:min="@integer/comet_min_strip"
             android:title="@string/max_comets_strip"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true" />
+            app:updatesContinuously="false" />
 
-        <SeekBarPreference
+        <thoreros.libraries.preference.seekbar.PreciseSeekBarPreference
             android:key="comet_speed"
             android:max="@integer/ubyte_max"
-            android:min="@integer/ubyte_nonzero_min"
+            app:min="@integer/ubyte_min"
             android:defaultValue="@integer/ubyte_max"
             android:title="@string/speed"
             app:iconSpaceReserved="false"
             app:showSeekBarValue="true"
-            app:updatesContinuously="true" />
+            app:updatesContinuously="false" />
 
     </PreferenceCategory>
 

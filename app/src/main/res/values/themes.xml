@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.ThorErosLampController.Base" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Preferences padding left-->
-        <item name="android:listPreferredItemPaddingStart">30dp</item>
+        <item name="android:listPreferredItemPaddingStart">15dp</item>
 
         <!-- PalettePreference-->
         <item name="paletteBorderColor">@color/black</item>
